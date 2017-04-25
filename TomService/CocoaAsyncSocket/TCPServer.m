@@ -143,7 +143,7 @@ static TCPServer *instance = nil;
             
         case TOMMessageTypeRunJS:
         {
-            TOMMessageModel *runModel = [[TOMMessageModel alloc] initWithType:TOMMessageTypeLogin andMessageDic:@{@"Run":@"1",@"name":@"Liu与i"}];
+            TOMMessageModel *runModel = [[TOMMessageModel alloc] initWithType:TOMMessageTypeRunJS andMessageDic:@{@"Run":@"1",@"name":@"Liu与i"}];
             runModel.tag = root.tag;
             [self send:runModel socket:sock seq:root.tag callback:nil];
         }
@@ -153,7 +153,6 @@ static TCPServer *instance = nil;
             [self send:root socket:sock seq:root.tag callback:nil];
         }
             break;
-
             
         default:
             NSLog(@"收到未知包 %ld", (long)root.type);
