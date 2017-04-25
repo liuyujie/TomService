@@ -7,7 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "TOMMessageModel.h"
+#import "TCPClient.h"
+#import "GCDAsyncSocket.h"
 
 @interface TCPServer : NSObject
+
++ (TCPServer *)instance;
+
+- (void)sendTomMessage:(TOMMessageModel *)messageModel Socket:(GCDAsyncSocket *)socket completion:(TCPBlock)block;
 
 @end

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		27B63AA41EAF82EC0054356A /* FileUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 27B63AA31EAF82EC0054356A /* FileUtil.m */; };
 		AF1E4FAA1EAEFCA80018C184 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1E4FA91EAEFCA80018C184 /* main.m */; };
 		AF1E4FB51EAEFCEC0018C184 /* GCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1E4FB21EAEFCEC0018C184 /* GCDAsyncSocket.m */; };
 		AF1E4FB61EAEFCEC0018C184 /* SocketClientManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1E4FB41EAEFCEC0018C184 /* SocketClientManager.m */; };
@@ -29,6 +30,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		27B63AA21EAF82EC0054356A /* FileUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileUtil.h; sourceTree = "<group>"; };
+		27B63AA31EAF82EC0054356A /* FileUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileUtil.m; sourceTree = "<group>"; };
 		AF1E4FA61EAEFCA80018C184 /* TomService */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = TomService; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF1E4FA91EAEFCA80018C184 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		AF1E4FB11EAEFCEC0018C184 /* GCDAsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncSocket.h; sourceTree = "<group>"; };
@@ -56,6 +59,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		27B63AA11EAF82DC0054356A /* FileUtil */ = {
+			isa = PBXGroup;
+			children = (
+				27B63AA21EAF82EC0054356A /* FileUtil.h */,
+				27B63AA31EAF82EC0054356A /* FileUtil.m */,
+			);
+			path = FileUtil;
+			sourceTree = "<group>";
+		};
 		AF1E4F9D1EAEFCA80018C184 = {
 			isa = PBXGroup;
 			children = (
@@ -75,6 +87,7 @@
 		AF1E4FA81EAEFCA80018C184 /* TomService */ = {
 			isa = PBXGroup;
 			children = (
+				27B63AA11EAF82DC0054356A /* FileUtil */,
 				AF1E4FB01EAEFCEC0018C184 /* CocoaAsyncSocket */,
 				AF1E4FA91EAEFCA80018C184 /* main.m */,
 			);
@@ -160,6 +173,7 @@
 				AFCFDD4F1EAF418A00B23992 /* TCPServer.m in Sources */,
 				AF1E4FB91EAEFDC20018C184 /* TCPClient.m in Sources */,
 				AF1E4FBC1EAF1BCE0018C184 /* TOMMessageModel.m in Sources */,
+				27B63AA41EAF82EC0054356A /* FileUtil.m in Sources */,
 				AF1E4FB51EAEFCEC0018C184 /* GCDAsyncSocket.m in Sources */,
 				AFCFDD4C1EAF3C9200B23992 /* SocketServerManager.m in Sources */,
 				AF1E4FB61EAEFCEC0018C184 /* SocketClientManager.m in Sources */,

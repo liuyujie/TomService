@@ -21,5 +21,8 @@
 
 @property (weak, nonatomic) id<SocketServerManagerDelegate> delegate;
 
+- (void)startServerWithPort:(UInt16)port;
+
+- (void)send:(NSData *)data socket:(GCDAsyncSocket *)socket;
 
 @end
