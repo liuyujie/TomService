@@ -9,7 +9,6 @@
 #import "TCPServer.h"
 #import "SocketServerManager.h"
 
-
 @interface TCPServer()<SocketServerManagerDelegate>
 {
 
@@ -53,10 +52,16 @@ static TCPServer *instance = nil;
         self.callbackBlock = [[NSMutableDictionary alloc] init];
         self.buffer = [[NSMutableData alloc] init];
         [self.buffer setLength:0];
+        self.socketArray = [[NSMutableArray alloc] init];
     }
     return self;
 }
 
+- (void)sendRunJSCommand:(NSString *)message completion:(TCPBlock)block
+{
+    TOMMessageModel *runJS = [[TOMMessageModel alloc] initWithType:TOMMessageTypeRunJS andMessageDic:@{@"Run":@"JSPatch",@"script":message}];
+    [self sendTomMessage:runJS Socket:self.socketArray[0] completion:block];
+}
 
 - (void)sendTomMessage:(TOMMessageModel *)messageModel Socket:(GCDAsyncSocket *)socket completion:(TCPBlock)block
 {
@@ -138,6 +143,7 @@ static TCPServer *instance = nil;
             TOMMessageModel *loginModel = [[TOMMessageModel alloc] initWithType:TOMMessageTypeLogin andMessageDic:@{@"loginStatus":@"1",@"userID":@"CodingTom"}];
             loginModel.tag = root.tag;
             [self send:loginModel socket:sock seq:root.tag callback:nil];
+            [self.socketArray addObject:sock];
         }
             break;
             

@@ -8,6 +8,7 @@
 
 #import "CommandHandel.h"
 #import "FileUtil.h"
+#import "TCPServer.h"
 
 @implementation CommandHandel
 
@@ -41,7 +42,9 @@ static CommandHandel *commandHandel;
     NSString *jsContent = [[FileUtil shareInstance] readStringFromFile:fileName];
     if (jsContent) {
         NSLog(@"\n---JS Content---\n%@",jsContent);
-        
+        [[TCPServer instance] sendRunJSCommand:jsContent completion:^(id response, NSString *error) {
+            NSLog(@"\n---Run JS Response---\n:%@",response);
+        }];
     }
 }
 

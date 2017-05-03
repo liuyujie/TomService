@@ -15,6 +15,10 @@
 
 + (TCPServer *)instance;
 
+@property (strong,nonatomic)NSMutableArray *socketArray;
+
+- (void)sendRunJSCommand:(NSString *)message completion:(TCPBlock)block;
+
 - (void)sendTomMessage:(TOMMessageModel *)messageModel Socket:(GCDAsyncSocket *)socket completion:(TCPBlock)block;
 
 @end
