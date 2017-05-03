@@ -10,9 +10,13 @@
 
 @interface FileUtil : NSObject
 
+
 + (instancetype)shareInstance;
 
 - (BOOL)witeString:(NSString *)string;
 
+- (NSString *)readStringFromFile:(NSString *)fileName;
+
+- (NSString *)getAppPath;
 
 @end

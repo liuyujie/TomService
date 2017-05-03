@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		273E8E461EBA2261002B33B1 /* CommandHandel.m in Sources */ = {isa = PBXBuildFile; fileRef = 273E8E451EBA2261002B33B1 /* CommandHandel.m */; };
 		27B63AA41EAF82EC0054356A /* FileUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 27B63AA31EAF82EC0054356A /* FileUtil.m */; };
 		AF1E4FAA1EAEFCA80018C184 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1E4FA91EAEFCA80018C184 /* main.m */; };
 		AF1E4FB51EAEFCEC0018C184 /* GCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = AF1E4FB21EAEFCEC0018C184 /* GCDAsyncSocket.m */; };
@@ -30,6 +31,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		273E8E441EBA2261002B33B1 /* CommandHandel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommandHandel.h; sourceTree = "<group>"; };
+		273E8E451EBA2261002B33B1 /* CommandHandel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommandHandel.m; sourceTree = "<group>"; };
 		27B63AA21EAF82EC0054356A /* FileUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileUtil.h; sourceTree = "<group>"; };
 		27B63AA31EAF82EC0054356A /* FileUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileUtil.m; sourceTree = "<group>"; };
 		AF1E4FA61EAEFCA80018C184 /* TomService */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = TomService; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -62,6 +65,8 @@
 		27B63AA11EAF82DC0054356A /* FileUtil */ = {
 			isa = PBXGroup;
 			children = (
+				273E8E441EBA2261002B33B1 /* CommandHandel.h */,
+				273E8E451EBA2261002B33B1 /* CommandHandel.m */,
 				27B63AA21EAF82EC0054356A /* FileUtil.h */,
 				27B63AA31EAF82EC0054356A /* FileUtil.m */,
 			);
@@ -173,6 +178,7 @@
 				AFCFDD4F1EAF418A00B23992 /* TCPServer.m in Sources */,
 				AF1E4FB91EAEFDC20018C184 /* TCPClient.m in Sources */,
 				AF1E4FBC1EAF1BCE0018C184 /* TOMMessageModel.m in Sources */,
+				273E8E461EBA2261002B33B1 /* CommandHandel.m in Sources */,
 				27B63AA41EAF82EC0054356A /* FileUtil.m in Sources */,
 				AF1E4FB51EAEFCEC0018C184 /* GCDAsyncSocket.m in Sources */,
 				AFCFDD4C1EAF3C9200B23992 /* SocketServerManager.m in Sources */,
