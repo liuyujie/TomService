@@ -71,6 +71,7 @@ static TCPServer *instance = nil;
         [self send:messageModel socket:socket seq:tag callback:block];
     });
 }
+
 // ----------- tcp 打包，并发送, callback 回调 block ------------
 - (void)send:(TOMMessageModel *)rootMsg  socket:(GCDAsyncSocket *) socket seq:(UInt32)s callback:(TCPBlock)block {
     
@@ -100,7 +101,12 @@ static TCPServer *instance = nil;
 - (void)clientSocket:(GCDAsyncSocket *)socket didReadClientData:(NSData *)data
 {
     [_buffer appendData:data];
-    
+    [self handelSocketData:socket];
+}
+
+//socket数据解析
+- (void)handelSocketData:(GCDAsyncSocket *)socket
+{
     while (_buffer.length >= 4) {
         SInt32 length = 0;
         [_buffer getBytes:&length length:4];    // 读取长度
@@ -130,10 +136,11 @@ static TCPServer *instance = nil;
         }
     }
 }
+
 //// 收到包进行分发
 - (void)receive:(TOMMessageModel *)root socket:(GCDAsyncSocket *)sock {
     if (root == nil) {
-        NSLog(@"收到心跳包");
+        NSLog(@"TCPServer消息为空");
         return ;
     }
 
@@ -142,8 +149,8 @@ static TCPServer *instance = nil;
         {
             TOMMessageModel *loginModel = [[TOMMessageModel alloc] initWithType:TOMMessageTypeLogin andMessageDic:@{@"loginStatus":@"1",@"userID":@"CodingTom"}];
             loginModel.tag = root.tag;
-            [self send:loginModel socket:sock seq:root.tag callback:nil];
             [self.socketArray addObject:sock];
+            [self send:loginModel socket:sock seq:root.tag callback:nil];
         }
             break;
             
